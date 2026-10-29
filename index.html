@@ -1,771 +1,254 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osmer Rondon | CV Interactivo & IT Operations Analyst</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0284c7',
-                            600: '#0369a1',
-                            700: '#075985',
-                            900: '#0c4a6e',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osmer Rondon - CV Interactivo | IT Operations & Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
             }
+          }
         }
-    </script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-        }
-        .dark .glass {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(10px);
-        }
-        @media print {
-            .no-print { display: none !important; }
-            .print-only { display: block !important; }
-            body { background: white !important; color: black !important; }
-        }
-    </style>
+      }
+    }
+  </script>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans">
 
-    <!-- Sticky Header -->
-    <header class="sticky top-0 z-40 glass border-b border-slate-200 dark:border-slate-800 no-print transition-all">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-white font-bold text-lg shadow-md">
-                    OR
-                </div>
-                <div>
-                    <h1 class="font-bold text-slate-900 dark:text-white leading-tight">Osmer Rondón</h1>
-                    <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">Analista de Operaciones IT</p>
-                </div>
-            </div>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-                <a href="#perfil" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Perfil</a>
-                <a href="#ats-matcher" class="hover:text-brand-600 dark:hover:text-brand-400 transition flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold">
-                    <i class="fa-solid fa-sliders text-xs"></i> Filtro ATS
-                </a>
-                <a href="#experiencia" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Experiencia</a>
-                <a href="#skills" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Habilidades</a>
-                <a href="#proyectos" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Proyectos</a>
-            </nav>
-
-            <div class="flex items-center gap-3">
-                <!-- Theme Switcher -->
-                <button id="themeToggle" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" title="Cambiar tema">
-                    <i class="fa-solid fa-moon dark:hidden"></i>
-                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
-                </button>
-
-                <!-- Print / PDF Button -->
-                <button onclick="window.print()" class="hidden sm:flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-slate-700 dark:text-slate-200">
-                    <i class="fa-solid fa-print"></i> PDF
-                </button>
-
-                <!-- Contact Modal Trigger -->
-                <button onclick="toggleModal('contactModal')" class="px-4 py-2 text-xs font-semibold rounded-lg bg-brand-600 text-white hover:bg-brand-700 transition shadow-sm flex items-center gap-2">
-                    <i class="fa-solid fa-paper-plane"></i> Contactar
-                </button>
-            </div>
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xl">OR</div>
+        <div>
+          <h1 class="font-bold text-lg leading-tight">Osmer Alessandro Rondon Yépez</h1>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Analista de Operaciones IT & Infraestructura</p>
         </div>
-    </header>
-
-    <!-- Main Container -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
-
-        <!-- Hero Section -->
-        <section class="relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-sm overflow-hidden">
-            <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-                <div class="space-y-4 max-w-2xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        Disponible para nuevas oportunidades en Buenos Aires / Remoto
-                    </div>
-                    
-                    <div>
-                        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                            Osmer Alessandro Rondon Yépez
-                        </h1>
-                        <p class="text-lg sm:text-xl font-medium text-brand-600 dark:text-brand-400 mt-1">
-                            Analista de Operaciones IT & Infraestructura / Analista de Sistemas
-                        </p>
-                    </div>
-
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Especialista en administración de servidores físicos y virtuales, redes corporativas, soporte L1/L2/L3 y optimización de infraestructura. Con sólidos conocimientos en virtualización (Proxmox, Hyper-V), contenedores (Docker), monitoreo continuo y bases de datos SQL.
-                    </p>
-
-                    <!-- Contact Details Badges -->
-                    <div class="flex flex-wrap gap-4 text-xs font-medium text-slate-600 dark:text-slate-300 pt-2">
-                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-500"></i> Buenos Aires, Argentina</span>
-                        <a href="mailto:osmer.rondon@email.com" class="flex items-center gap-1.5 hover:text-brand-600"><i class="fa-solid fa-envelope text-brand-500"></i> Contacto por Email</a>
-                        <a href="https://linkedin.com" target="_blank" class="flex items-center gap-1.5 hover:text-brand-600"><i class="fa-brands fa-linkedin text-brand-500"></i> LinkedIn Profile</a>
-                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-language text-brand-500"></i> Español (Nativo) | Inglés (Técnico)</span>
-                    </div>
-
-                    <!-- Tech Core Pills -->
-                    <div class="pt-3 flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-mono">Proxmox / Hyper-V</span>
-                        <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-mono">Active Directory</span>
-                        <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-mono">Docker & MinIO</span>
-                        <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-mono">UniFi VLANs</span>
-                        <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-mono">Grafana / SQL</span>
-                    </div>
-                </div>
-
-                <!-- Quick Stats / Callout Card -->
-                <div class="w-full md:w-72 bg-slate-50 dark:bg-slate-900/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700/80 flex flex-col gap-4">
-                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Resumen Técnico</h3>
-                    
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-slate-500">Uptime & Servidores:</span>
-                            <span class="font-bold text-slate-800 dark:text-slate-200">Proxmox / Windows Server</span>
-                        </div>
-                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-brand-500 h-full w-[92%]"></div>
-                        </div>
-
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-slate-500">Soporte Infraestructura:</span>
-                            <span class="font-bold text-slate-800 dark:text-slate-200">L1 / L2 / L3 Ops</span>
-                        </div>
-                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-emerald-500 h-full w-[95%]"></div>
-                        </div>
-
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-slate-500">Bases de Datos & Scripting:</span>
-                            <span class="font-bold text-slate-800 dark:text-slate-200">SQL / Bash / C#</span>
-                        </div>
-                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-indigo-500 h-full w-[85%]"></div>
-                        </div>
-                    </div>
-
-                    <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center">
-                        <span class="text-xs text-slate-500">Certificación reciente:</span>
-                        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Prog. C# (2026)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RECRUITER / ATS INTERACTIVE MATCHER -->
-        <section id="ats-matcher" class="bg-gradient-to-br from-slate-900 to-brand-950 text-white rounded-2xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
-            <div class="relative z-10 space-y-6">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div>
-                        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30 mb-2">
-                            <i class="fa-solid fa-robot"></i> Herramienta para Reclutadores & ATS
-                        </div>
-                        <h2 class="text-xl sm:text-2xl font-bold">Filtro Rápido de Requerimientos de Vacante</h2>
-                        <p class="text-xs sm:text-sm text-slate-300">Selecciona las competencias de tu búsqueda laboral para verificar mi compatibilidad en tiempo real:</p>
-                    </div>
-                    <div class="text-right">
-                        <span id="matchPercentage" class="text-3xl font-extrabold text-teal-400">0%</span>
-                        <p class="text-xs text-slate-400">Match con tu Búsqueda</p>
-                    </div>
-                </div>
-
-                <!-- ATS Keywords Toggle Badges -->
-                <div class="flex flex-wrap gap-2" id="atsKeywordsContainer">
-                    <!-- Dynamic Badges JS -->
-                </div>
-
-                <!-- Live Results Callout -->
-                <div id="atsMatchResults" class="p-4 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm space-y-2">
-                    <p class="text-slate-400 italic">Haz clic en las habilidades de la lista superior que requiere tu vacante para ver las evidencias correspondientes de mi perfil.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PERFIL PROFESIONAL -->
-        <section id="perfil" class="bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-sm">
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
-                <i class="fa-solid fa-user-gear text-brand-500"></i> Perfil Profesional
-            </h2>
-            <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-3">
-                <p>
-                    Analista de Operaciones IT e Infraestructura con sólida experiencia en soporte técnico nivel L1/L2/L3, administración de redes, entornos virtualizados y servidores empresariales. Mi enfoque combina la resolución rápida de incidentes operativos con la automatización y mejora continua de la arquitectura IT.
-                </p>
-                <p>
-                    Cuento con trayectoria comprobada en la gestión de hipervisores como <strong>Proxmox VE</strong> y <strong>Hyper-V</strong>, administración de usuarios y políticas mediante <strong>Active Directory / LDAP</strong>, despliegue de contenedores con <strong>Docker</strong>, mantenimiento de bases de datos <strong>SQL</strong> y diseño de tableros de monitoreo centralizado con <strong>Grafana</strong>.
-                </p>
-                <p>
-                    Adicionalmente, poseo formación técnica en Análisis de Sistemas y programación (C#, bases de datos, lógica algorítmica), lo que me permite colaborar eficazmente con equipos de desarrollo, comprender código y automatizar procesos de soporte e infraestructura mediante scripts.
-                </p>
-            </div>
-        </section>
-
-        <!-- EXPERIENCIA LABORAL (TIMELINE) -->
-        <section id="experiencia" class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                        <i class="fa-solid fa-briefcase text-brand-500"></i> Experiencia Laboral
-                    </h2>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">Trayectoria enfocada en operaciones, soporte e infraestructura tecnológica</p>
-                </div>
-
-                <!-- Category Filters -->
-                <div class="flex flex-wrap gap-2 text-xs no-print">
-                    <button onclick="filterExperience('all')" class="exp-filter-btn active px-3 py-1.5 rounded-lg border border-brand-500 bg-brand-500 text-white font-medium transition">Todos</button>
-                    <button onclick="filterExperience('ops')" class="exp-filter-btn px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium hover:border-brand-500 transition">Operaciones IT & Infra</button>
-                    <button onclick="filterExperience('soporte')" class="exp-filter-btn px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium hover:border-brand-500 transition">Soporte Tecnológico</button>
-                </div>
-            </div>
-
-            <!-- Timeline Cards Container -->
-            <div class="space-y-6 relative before:absolute before:inset-0 before:left-4 sm:before:left-8 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700/60">
-
-                <!-- Role 1: ITing S.A. -->
-                <div class="exp-card ops relative pl-10 sm:pl-16 transition-all" data-tags="proxmox docker active-directory vlan sql grafana ops">
-                    <!-- Icon dot -->
-                    <div class="absolute left-2 sm:left-6 top-1.5 w-5 h-5 rounded-full bg-brand-500 ring-4 ring-slate-50 dark:ring-slate-900 flex items-center justify-center text-white text-[10px]">
-                        <i class="fa-solid fa-server"></i>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/70 rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-700/60 pb-3 mb-4">
-                            <div>
-                                <span class="px-2 py-0.5 text-[10px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded">Actualidad</span>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Analista de Operaciones IT</h3>
-                                <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">ITing S.A. <span class="text-slate-400 font-normal">| Buenos Aires, Argentina</span></p>
-                            </div>
-                            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700/50 px-3 py-1 rounded-full self-start sm:self-auto">
-                                Octubre 2024 – Presente
-                            </span>
-                        </div>
-
-                        <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc list-inside leading-relaxed">
-                            <li><strong>Gestión de Servidores & Virtualización:</strong> Administración integral de clústeres de servidores físicos y máquinas virtuales operando sobre <strong>Proxmox VE</strong> y Microsoft Hyper-V, garantizando alta disponibilidad.</li>
-                            <li><strong>Directorio Activo & Accesos:</strong> Gestión centralizada de usuarios, permisos, roles y directivas de grupo (GPO) en Active Directory / Windows Server.</li>
-                            <li><strong>Redes Corporativas & VLANs:</strong> Configuración y mantenimiento de infraestructura de red UniFi, segmentación de subredes VLAN, switches y Firewalls.</li>
-                            <li><strong>Monitoreo Continuo & Mantenimiento SQL:</strong> Implementación y seguimiento de tableros en <strong>Grafana</strong> para métricas de recursos; ejecución de consultas y tareas de mantenimiento en bases de datos <strong>SQL Server / MySQL</strong>.</li>
-                            <li><strong>Contenedores & Almacenamiento:</strong> Despliegue de servicios mediante <strong>Docker</strong> y configuración de buckets de almacenamiento local/S3 con MinIO para resguardo de respaldos.</li>
-                        </ul>
-
-                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50 flex flex-wrap gap-1.5">
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">Proxmox</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">Active Directory</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">Docker</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">Grafana</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">UniFi Network</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">SQL Server</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Role 2: Finnegans -->
-                <div class="exp-card soporte ops relative pl-10 sm:pl-16 transition-all" data-tags="soporte-l1-l2 active-directory sql ticket-system erp soporte">
-                    <div class="absolute left-2 sm:left-6 top-1.5 w-5 h-5 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-slate-900 flex items-center justify-center text-white text-[10px]">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/70 rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-700/60 pb-3 mb-4">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Analista de Soporte IT e Infraestructura (L1/L2)</h3>
-                                <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Finnegans <span class="text-slate-400 font-normal">| Buenos Aires, Argentina</span></p>
-                            </div>
-                            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700/50 px-3 py-1 rounded-full self-start sm:self-auto">
-                                Febrero 2023 – Septiembre 2024
-                            </span>
-                        </div>
-
-                        <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 list-disc list-inside leading-relaxed">
-                            <li><strong>Atención e Incidentes:</strong> Resolución de tickets de soporte técnico L1 y L2 garantizando el cumplimiento de los Acuerdos de Nivel de Servicio (SLA) para usuarios internos y clientes del sistema ERP.</li>
-                            <li><strong>Mantenimiento Preventivo / Correctivo:</strong> Diagnóstico y reparación de equipamiento informático, instalación y configuración de sistemas operativos, periféricos y software corporativo.</li>
-                            <li><strong>Soporte en Bases de Datos:</strong> Diagnóstico de consistencia de datos, consultas de soporte técnico en bases SQL y colaboración con el área de infraestructura para resolución de caídas de servicio.</li>
-                            <li><strong>Onboarding Técnico:</strong> Configuración de estaciones de trabajo, credenciales corporativas en Active Directory, accesos a red y cuentas de correo.</li>
-                        </ul>
-
-                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50 flex flex-wrap gap-1.5">
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">Soporte L1/L2</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">ERP Finnegans</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">Active Directory</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">Helpdesk / Tickets</span>
-                            <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 rounded">SQL Queries</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Role 3: Experiencia Previa -->
-                <div class="exp-card soporte relative pl-10 sm:pl-16 transition-all" data-tags="soporte-tecnico redes hardware asistencia-tecnica">
-                    <div class="absolute left-2 sm:left-6 top-1.5 w-5 h-5 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-slate-50 dark:ring-slate-900 flex items-center justify-center text-white text-[10px]">
-                        <i class="fa-solid fa-wrench"></i>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/70 rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-700/60 pb-3 mb-4">
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Técnico de Soporte e Infraestructura IT</h3>
-                                <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Servicios Informáticos e Infraestructura IT Independiente</p>
-                            </div>
-                            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700/50 px-3 py-1 rounded-full self-start sm:self-auto">
-                                2020 – 2023
-                            </span>
-                        </div>
-
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Atención a PYMES y clientes particulares: cableado estructurado de red, armado e instalación de racks, soporte de hardware, desinfección de malware, configuración de routers y políticas básicas de seguridad de red local.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- HABILIDADES TÉCNICAS (MATRIZ INTERACTIVA) -->
-        <section id="skills" class="bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                        <i class="fa-solid fa-microchip text-brand-500"></i> Habilidades Técnicas & Stack
-                    </h2>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">Filtrar tecnologías por categoría o buscar término</p>
-                </div>
-
-                <!-- Skill Search Input -->
-                <div class="relative no-print">
-                    <input type="text" id="skillSearchInput" onkeyup="searchSkills()" placeholder="Buscar skill (ej. Docker)..." class="w-full sm:w-64 px-3 py-1.5 pl-9 text-xs rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-                </div>
-            </div>
-
-            <!-- Category Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="skillsGrid">
-
-                <!-- Cat 1 -->
-                <div class="skill-category bg-slate-50 dark:bg-slate-900/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700/60">
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
-                        <i class="fa-solid fa-cloud-arrow-up text-brand-500"></i> Virtualización & Servidores
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>Proxmox VE & Hyper-V</span>
-                                <span class="text-brand-600 dark:text-brand-400">Avanzado</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[90%]"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>Windows Server & Active Directory</span>
-                                <span class="text-brand-600 dark:text-brand-400">Avanzado</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[88%]"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>Docker / Contenedores</span>
-                                <span class="text-brand-600 dark:text-brand-400">Intermedio</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[78%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cat 2 -->
-                <div class="skill-category bg-slate-50 dark:bg-slate-900/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700/60">
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
-                        <i class="fa-solid fa-network-wired text-brand-500"></i> Redes & Infraestructura
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>UniFi & Subredes VLAN</span>
-                                <span class="text-brand-600 dark:text-brand-400">Avanzado</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[85%]"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>Firewalls & Enrutamiento TCP/IP</span>
-                                <span class="text-brand-600 dark:text-brand-400">Intermedio</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[80%]"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>MinIO (Object Storage) & Backups</span>
-                                <span class="text-brand-600 dark:text-brand-400">Intermedio</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[75%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cat 3 -->
-                <div class="skill-category bg-slate-50 dark:bg-slate-900/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700/60">
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
-                        <i class="fa-solid fa-chart-line text-brand-500"></i> Monitoreo & Bases de Datos
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>Grafana Dashboards</span>
-                                <span class="text-brand-600 dark:text-brand-400">Intermedio</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[82%]"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>SQL Server / MySQL Queries</span>
-                                <span class="text-brand-600 dark:text-brand-400">Intermedio</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[80%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cat 4 -->
-                <div class="skill-category bg-slate-50 dark:bg-slate-900/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700/60">
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
-                        <i class="fa-solid fa-code text-brand-500"></i> Programación & Scripting
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>C# / .NET (Certificado Finnegans)</span>
-                                <span class="text-brand-600 dark:text-brand-400">Fundamentos / Junior</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[70%]"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="flex justify-between text-xs font-semibold mb-1">
-                                <span>Bash / Scripting de Automatización</span>
-                                <span class="text-brand-600 dark:text-brand-400">Intermedio</span>
-                            </div>
-                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                <div class="bg-brand-500 h-full w-[75%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- PROYECTOS DESTACADOS -->
-        <section id="proyectos" class="space-y-6">
-            <div>
-                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                    <i class="fa-solid fa-diagram-project text-brand-500"></i> Proyectos Destacados de Infraestructura
-                </h2>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Soluciones prácticas de automatización y almacenamiento en entornos locales</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <!-- Project 1 -->
-                <div class="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/70 rounded-xl p-6 shadow-sm hover:border-brand-500/50 transition flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="p-2 rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 text-lg">
-                                <i class="fa-solid fa-box-archive"></i>
-                            </span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Docker + Object Storage</span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 dark:text-white">Servidor de Almacenamiento Local S3 con MinIO & Docker</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Diseño y despliegue de una infraestructura FTP y almacenamiento de objetos compatible con AWS S3 en servidores locales utilizando contenedores Docker y MinIO, automatizando backups y garantizando redundancia de archivos.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50 flex flex-wrap gap-1 text-[10px] font-mono text-slate-500">
-                        <span>#Docker</span> <span>#MinIO</span> <span>#S3-API</span> <span>#Linux</span> <span>#Backups</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/70 rounded-xl p-6 shadow-sm hover:border-brand-500/50 transition flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 text-lg">
-                                <i class="fa-solid fa-gauge-high"></i>
-                            </span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Monitoreo Proactivo</span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 dark:text-white">Tablero de Monitoreo Centralizado de Recursos con Grafana</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Configuración de agentes de telemetría y dashboards en Grafana para visualizar en tiempo real la salud de nodos de hipervisores Proxmox, uso de red, almacenamiento en disco y uso de memoria RAM con alertas automatizadas.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/50 flex flex-wrap gap-1 text-[10px] font-mono text-slate-500">
-                        <span>#Grafana</span> <span>#Proxmox</span> <span>#Metrics</span> <span>#Alerting</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- EDUCACIÓN Y CERTIFICACIONES -->
-        <section id="educacion" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <!-- Educación -->
-            <div class="bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
-                <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                    <i class="fa-solid fa-graduation-cap text-brand-500"></i> Educación & Formación
-                </h2>
-                
-                <div class="border-l-2 border-brand-500 pl-4 py-1 space-y-1">
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">Analista de Sistemas / Ingeniería de Sistemas</h3>
-                    <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">Estudios Superiores en Informática</p>
-                    <p class="text-xs text-slate-500">Formación integral en arquitectura de software, bases de datos, lógica de programación y redes informáticas.</p>
-                </div>
-            </div>
-
-            <!-- Certificaciones -->
-            <div class="bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
-                <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                    <i class="fa-solid fa-certificate text-brand-500"></i> Cursos & Certificaciones
-                </h2>
-
-                <div class="border-l-2 border-emerald-500 pl-4 py-1 space-y-1">
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-sm font-bold text-slate-900 dark:text-white">Programación Desde Cero (C# / Lógica)</h3>
-                        <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 px-2 py-0.5 rounded">Julio 2026</span>
-                    </div>
-                    <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">Finnegans Academy</p>
-                    <p class="text-xs text-slate-500">Certificación en fundamentos de programación en C#, estructuras de datos y resolución algorítmica de problemas.</p>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 no-print mt-12">
-        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 dark:text-slate-400 space-y-2">
-            <p>© 2026 Osmer Alessandro Rondon Yépez • Analista de Operaciones IT & Sistemas</p>
-            <p class="text-[11px]">Diseñado para visualización rápida de reclutadores y compatibilidad con sistemas ATS.</p>
-        </div>
-    </footer>
-
-    <!-- CONTACT MODAL -->
-    <div id="contactModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-700 relative animate-in fade-in zoom-in-95 duration-200">
-            <button onclick="toggleModal('contactModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Contactar con Osmer</h3>
-            <p class="text-xs text-slate-500 mb-6">Selecciona la vía de comunicación de tu preferencia:</p>
-
-            <div class="space-y-3">
-                <a href="mailto:osmer.rondon@email.com" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">
-                    <div class="w-10 h-10 rounded-lg bg-brand-100 text-brand-600 dark:bg-brand-950 dark:text-brand-400 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-semibold text-slate-800 dark:text-slate-200">Correo Electrónico</p>
-                        <p class="text-xs text-slate-500">Enviar mensaje por Email</p>
-                    </div>
-                </a>
-
-                <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">
-                    <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-400 flex items-center justify-center text-lg">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-semibold text-slate-800 dark:text-slate-200">Perfil de LinkedIn</p>
-                        <p class="text-xs text-slate-500">Conectar en red profesional</p>
-                    </div>
-                </a>
-
-                <button onclick="copyEmail()" class="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 transition">
-                    <i class="fa-solid fa-copy"></i> Copiar Dirección de Email
-                </button>
-            </div>
-        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+          <i class="fa-solid fa-moon dark:hidden"></i>
+          <i class="fa-solid fa-sun hidden dark:inline"></i>
+        </button>
+        <a href="mailto:osmer.rondon@gmail.com" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg shadow-sm transition">
+          <i class="fa-solid fa-envelope mr-1"></i> Contactar
+        </a>
+      </div>
     </div>
+  </header>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // ATS Matcher Data & Functionality
-        const atsRequirements = [
-            { id: 'proxmox', label: 'Proxmox VE', evidence: 'Administración de clústeres de VM y servidores físicos en ITing S.A.' },
-            { id: 'docker', label: 'Docker / Contenedores', evidence: 'Despliegues de microservicios e infraestructura FTP S3 con MinIO.' },
-            { id: 'active-directory', label: 'Active Directory / Windows Server', evidence: 'Gestión centralizada de usuarios, permisos, GPOs en ITing S.A. y Finnegans.' },
-            { id: 'vlan', label: 'Redes / UniFi / VLANs', evidence: 'Configuración de switches UniFi y segmentación de subredes VLAN corporativas.' },
-            { id: 'sql', label: 'Bases de Datos SQL', evidence: 'Mantenimiento y consultas SQL Server / MySQL en soporte L2 e infraestructura.' },
-            { id: 'grafana', label: 'Monitoreo / Grafana', evidence: 'Diseño de tableros de métricas en tiempo real para servidores y red.' },
-            { id: 'soporte-l1-l2', label: 'Soporte L1/L2/L3', evidence: 'Resolución de incidentes garantizando SLAs en Finnegans e ITing S.A.' },
-            { id: 'csharp', label: 'C# / Scripting', evidence: 'Certificación C# en Finnegans Academy y scripts de automatización Bash.' }
-        ];
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <span class="inline-block px-3 py-1 bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 text-xs font-semibold rounded-full border border-brand-100 dark:border-brand-800">
+            Disponible para Nuevos Desafíos IT
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Operaciones IT, Virtualización y Soporte de Infraestructura</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            Especialista en administración de entornos Linux/Windows, contenedores Docker, gestión de servidores Proxmox/Hyper-V, monitoreo de servicios y buenas prácticas ITIL/SLA. Experiencia comprobada en despliegues, migraciones de bases de datos SQL y automatización con Python.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded text-xs"><i class="fa-solid fa-location-dot text-red-500 mr-1"></i>Buenos Aires, Argentina</span>
+            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded text-xs"><i class="fa-solid fa-shield-halved text-brand-500 mr-1"></i>ITIL v3/v4 & SLA</span>
+            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded text-xs"><i class="fa-brands fa-python text-yellow-500 mr-1"></i>Python Automation</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 w-full md:w-auto">
+          <a href="https://linkedin.com" target="_blank" class="px-4 py-2.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 rounded-lg text-sm text-center font-medium transition flex items-center justify-center gap-2">
+            <i class="fa-brands fa-linkedin text-blue-600"></i> LinkedIn Profile
+          </a>
+          <button onclick="window.print()" class="px-4 py-2.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 rounded-lg text-sm font-medium transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-file-pdf text-red-600"></i> Guardar como PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        let selectedAtsKeys = new Set(['proxmox', 'active-directory', 'docker']);
+  <!-- Interactive ATS Matcher -->
+  <section class="max-w-6xl mx-auto px-4 py-4">
+    <div class="bg-gradient-to-r from-brand-700 to-slate-800 rounded-2xl p-6 text-white shadow-md">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <div>
+          <h3 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-sliders text-brand-400"></i> Filtro de Competencias para Reclutadores</h3>
+          <p class="text-xs text-slate-300">Selecciona los requerimientos clave de tu búsqueda laboral para verificar la experiencia demostrable:</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-4" id="filterContainer">
+        <button data-tag="all" class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-brand-700 transition">Todos</button>
+        <button data-tag="linux" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/80 hover:bg-slate-600 text-slate-200 transition">Linux & Shell</button>
+        <button data-tag="docker" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/80 hover:bg-slate-600 text-slate-200 transition">Docker & MinIO</button>
+        <button data-tag="python" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/80 hover:bg-slate-600 text-slate-200 transition">Python</button>
+        <button data-tag="sql" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/80 hover:bg-slate-600 text-slate-200 transition">SQL Server / Migraciones</button>
+        <button data-tag="itil" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/80 hover:bg-slate-600 text-slate-200 transition">ITIL & SLA / Squash</button>
+        <button data-tag="aws" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/80 hover:bg-slate-600 text-slate-200 transition">AWS (Básico)</button>
+        <button data-tag="networking" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700/80 hover:bg-slate-600 text-slate-200 transition">Firewall & Redes (Básico)</button>
+      </div>
+    </div>
+  </section>
 
-        function renderAtsKeywords() {
-            const container = document.getElementById('atsKeywordsContainer');
-            container.innerHTML = atsRequirements.map(req => {
-                const isSelected = selectedAtsKeys.has(req.id);
-                return `
-                    <button onclick="toggleAtsKey('${req.id}')" class="px-3 py-1 rounded-full text-xs font-medium transition flex items-center gap-1.5 ${
-                        isSelected 
-                        ? 'bg-teal-400 text-slate-950 font-bold shadow-sm' 
-                        : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700'
-                    }">
-                        <i class="fa-solid ${isSelected ? 'fa-check' : 'fa-plus'} text-[10px]"></i>
-                        ${req.label}
-                    </button>
-                `;
-            }).join('');
+  <!-- Experiencia Laboral -->
+  <section class="max-w-6xl mx-auto px-4 py-6">
+    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+      <i class="fa-solid fa-briefcase text-brand-600"></i> Experiencia Laboral
+    </h3>
 
-            updateAtsResults();
-        }
+    <div class="space-y-6">
 
-        function toggleAtsKey(id) {
-            if (selectedAtsKeys.has(id)) {
-                selectedAtsKeys.delete(id);
-            } else {
-                selectedAtsKeys.add(id);
-            }
-            renderAtsKeywords();
-        }
+      <!-- ITing S.A. -->
+      <div class="job-card bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700" data-tags="linux docker python aws networking itil">
+        <div class="flex flex-col md:flex-row justify-between md:items-center mb-3">
+          <div>
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Analista de Operaciones IT</h4>
+            <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">ITing S.A.</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded font-mono mt-1 md:mt-0 w-fit">Octubre 2026 - Presente</span>
+        </div>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-2 mb-4">
+          <li>Operación y mantenimiento preventivo/correctivo de infraestructura de servidores en ambientes productivos y QA.</li>
+          <li>Despliegue y administración de contenedores Docker y entornos virtualizados (Proxmox / Hyper-V).</li>
+          <li>Monitoreo continuo de servicios críticos, métricas de rendimiento y atención de alertas de infraestructura.</li>
+          <li>Soporte de nivel 2 para resolución de incidentes bajo parámetros de métricas y acuerdos de nivel de servicio (SLA).</li>
+        </ul>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Docker</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Linux Ubuntu Server</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Proxmox</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Python Scripts</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">AWS (EC2/S3 básico)</span>
+        </div>
+      </div>
 
-        function updateAtsResults() {
-            const resultsContainer = document.getElementById('atsMatchResults');
-            const percentageElement = document.getElementById('matchPercentage');
-            
-            const matchScore = Math.round((selectedAtsKeys.size / atsRequirements.length) * 100);
-            percentageElement.innerText = `${matchScore}%`;
+      <!-- Finnegans -->
+      <div class="job-card bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700" data-tags="sql linux itil networking python">
+        <div class="flex flex-col md:flex-row justify-between md:items-center mb-3">
+          <div>
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Analista de Soporte IT / Operaciones & Líder de Guardias (Squash)</h4>
+            <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Finnegans</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded font-mono mt-1 md:mt-0 w-fit">Experiencia Anterior</span>
+        </div>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-2 mb-4">
+          <li><strong>Líder de Guardias IT (Squash):</strong> Coordinación y atención de incidentes críticos fuera del horario operativo estándar, actuando como punto de escalamiento directo para la contención de contingencias en la plataforma.</li>
+          <li><strong>Migración de Bases de Datos:</strong> Ejecución e implementación de migraciones de bases de datos de clientes (SQL Server / MySQL) entre ambientes, asegurando la integridad de la información.</li>
+          <li><strong>Soporte a la Infraestructura:</strong> Administración de servidores en producción y QA, gestión de usuarios, Active Directory, permisos y servicios web.</li>
+          <li><strong>Gestión de SLAs e Incidentes:</strong> Atención e investigación de tickets mediante buenas prácticas ITIL, logrando altos índices de resolución dentro del tiempo pactado con el cliente.</li>
+        </ul>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Líder de Guardias / Squash</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">SQL Server</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Active Directory</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">ITIL & SLA</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">GLPI / ticketing</span>
+        </div>
+      </div>
 
-            if (selectedAtsKeys.size === 0) {
-                resultsContainer.innerHTML = `<p class="text-slate-400 italic">Selecciona requerimientos arriba para ver el reporte de compatibilidad.</p>`;
-                return;
-            }
+    </div>
+  </section>
 
-            const activeEvidences = atsRequirements.filter(r => selectedAtsKeys.has(r.id));
-            resultsContainer.innerHTML = `
-                <p class="font-bold text-teal-300 mb-2">Evidencias comprobadas en mi experiencia (${activeEvidences.length}):</p>
-                <ul class="space-y-1.5 list-disc list-inside">
-                    ${activeEvidences.map(item => `
-                        <li><strong class="text-white">${item.label}:</strong> ${item.evidence}</li>
-                    `).join('')}
-                </ul>
-            `;
-        }
+  <!-- Habilidades Técnicas -->
+  <section class="max-w-6xl mx-auto px-4 py-6">
+    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+      <i class="fa-solid fa-layer-group text-brand-600"></i> Matriz de Conocimientos Técnicos
+    </h3>
 
-        // Theme Toggle Logic
-        const themeToggleBtn = document.getElementById('themeToggle');
-        themeToggleBtn.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Sistemas & Virtualización -->
+      <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <h4 class="font-bold text-sm text-brand-600 dark:text-brand-400 mb-3 uppercase tracking-wider"><i class="fa-solid fa-server mr-2"></i>Sistemas & Cloud</h4>
+        <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+          <li class="flex justify-between"><span>Linux (Ubuntu / Debian / Zorin)</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Avanzado</span></li>
+          <li class="flex justify-between"><span>Proxmox VE & Hyper-V</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+          <li class="flex justify-between"><span>Docker & Docker Compose</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+          <li class="flex justify-between"><span>AWS (EC2, S3, IAM)</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Básico</span></li>
+          <li class="flex justify-between"><span>Windows Server & Active Directory</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+        </ul>
+      </div>
+
+      <!-- Redes & Desarrollo -->
+      <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <h4 class="font-bold text-sm text-brand-600 dark:text-brand-400 mb-3 uppercase tracking-wider"><i class="fa-solid fa-code mr-2"></i>Desarrollo & Redes</h4>
+        <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+          <li class="flex justify-between"><span>Python (Automation & Data)</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+          <li class="flex justify-between"><span>SQL (Queries & Migraciones)</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+          <li class="flex justify-between"><span>Firewall & Enrutamiento</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Básico</span></li>
+          <li class="flex justify-between"><span>Ubiquiti UniFi & Switches</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+          <li class="flex justify-between"><span>MinIO Object Storage</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+        </ul>
+      </div>
+
+      <!-- Metodologías & Gestión -->
+      <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <h4 class="font-bold text-sm text-brand-600 dark:text-brand-400 mb-3 uppercase tracking-wider"><i class="fa-solid fa-list-check mr-2"></i>Gestión & Servicios</h4>
+        <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+          <li class="flex justify-between"><span>Procesos ITIL v3/v4</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+          <li class="flex justify-between"><span>Gestión de SLA & Incidentes</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Avanzado</span></li>
+          <li class="flex justify-between"><span>Liderazgo de Guardias / Squash</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Avanzado</span></li>
+          <li class="flex justify-between"><span>GLPI Service Management</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Avanzado</span></li>
+          <li class="flex justify-between"><span>Grafana / Monitoreo</span> <span class="font-semibold text-slate-800 dark:text-slate-200">Intermedio</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-4 py-8 border-t border-slate-200 dark:border-slate-800 mt-10 text-center text-xs text-slate-500">
+    <p>CV Interactivo - Osmer Alessandro Rondon Yépez • Buenos Aires, Argentina</p>
+  </footer>
+
+  <!-- Script interactivo -->
+  <script>
+    // Theme Switcher
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // ATS Matcher Filter
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const jobCards = document.querySelectorAll('.job-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-white', 'text-brand-700');
+          b.classList.add('bg-slate-700/80', 'text-slate-200');
         });
+        btn.classList.add('bg-white', 'text-brand-700');
+        btn.classList.remove('bg-slate-700/80', 'text-slate-200');
 
-        // Experience Filter
-        function filterExperience(category) {
-            const cards = document.querySelectorAll('.exp-card');
-            const btns = document.querySelectorAll('.exp-filter-btn');
+        const tag = btn.getAttribute('data-tag');
 
-            btns.forEach(btn => {
-                btn.classList.remove('bg-brand-500', 'text-white');
-                btn.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
-            });
-            event.currentTarget.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
-            event.currentTarget.classList.add('bg-brand-500', 'text-white');
-
-            cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Skill Search Logic
-        function searchSkills() {
-            const input = document.getElementById('skillSearchInput').value.toLowerCase();
-            const items = document.querySelectorAll('.skill-item');
-
-            items.forEach(item => {
-                const text = item.innerText.toLowerCase();
-                if (text.includes(input)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Modal Handler
-        function toggleModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.toggle('hidden');
-        }
-
-        // Copy Email to Clipboard
-        function copyEmail() {
-            const textToCopy = "osmer.rondon@email.com";
-            const dummy = document.createElement("textarea");
-            document.body.appendChild(dummy);
-            dummy.value = textToCopy;
-            dummy.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummy);
-            alert("¡Correo copiado al portapapeles!");
-        }
-
-        // Initialize on Load
-        window.onload = function() {
-            renderAtsKeywords();
-        };
-    </script>
+        jobCards.forEach(card => {
+          if (tag === 'all') {
+            card.style.display = 'block';
+          } else {
+            const cardTags = card.getAttribute('data-tags').split(' ');
+            if (cardTags.includes(tag)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
