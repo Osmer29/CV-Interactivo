@@ -115,7 +115,7 @@
             <h4 class="text-lg font-bold text-slate-900 dark:text-white">Analista de Operaciones IT</h4>
             <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">ITing S.A.</p>
           </div>
-          <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded font-mono mt-1 md:mt-0 w-fit">Octubre 2026 - Presente</span>
+          <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded font-mono mt-1 md:mt-0 w-fit">10/2026 - Presente</span>
         </div>
         <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-2 mb-4">
           <li><strong>Gestión de Usuarios y Accesos (AD & M365):</strong> Procesamiento de altas/bajas de cuentas en Active Directory (ADUC), asignación de OUs, directivas, atributos (proxyAddresses/employeeID) y licencias en el Centro de Administración M365.</li>
@@ -139,7 +139,7 @@
             <h4 class="text-lg font-bold text-slate-900 dark:text-white">Analista de Soporte IT / Operaciones & Líder de Squash (Vertical OT)</h4>
             <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Finnegans</p>
           </div>
-          <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded font-mono mt-1 md:mt-0 w-fit">Experiencia Anterior</span>
+          <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded font-mono mt-1 md:mt-0 w-fit">06/2021 - 09/2026</span>
         </div>
         <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-2 mb-4">
           <li><strong>Administración ERP Finnegans:</strong> Soporte operativo y administración del ERP en arquitecturas <em>On-Premise</em> y en instancias dedicadas sobre <strong>AWS</strong>.</li>
@@ -156,6 +156,28 @@
           <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Jenkins & Scripting</span>
           <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">SQL Intermedio</span>
           <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Gestión de Clientes Externos</span>
+        </div>
+      </div>
+
+      <!-- Novada -->
+      <div class="job-card bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700" data-tags="ad linux">
+        <div class="flex flex-col md:flex-row justify-between md:items-center mb-3">
+          <div>
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Analista de Soporte IT y Administración de Sistemas</h4>
+            <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Novada</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded font-mono mt-1 md:mt-0 w-fit">06/2019 - 06/2021</span>
+        </div>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-2 mb-4">
+          <li><strong>Administración de Active Directory & Servidores:</strong> Gestión de cuentas de usuario, asignación de permisos, altas/bajas y carpetas compartidas bajo entornos Windows Server.</li>
+          <li><strong>Mantenimiento de Servidores Linux:</strong> Tareas operativas básicas de mantenimiento, administración y monitoreo de servidores Linux (Debian / Ubuntu).</li>
+          <li><strong>Soporte Técnico Nivel 1 y 2:</strong> Diagnóstico y reparación de hardware, mantenimiento informático y soporte mesa de ayuda a usuarios internos y remotos.</li>
+        </ul>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Active Directory</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Windows Server</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Linux Server (Debian/Ubuntu)</span>
+          <span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded">Soporte Hardware & Nivel 2</span>
         </div>
       </div>
 
@@ -243,4 +265,13 @@
             const cardTags = card.getAttribute('data-tags').split(' ');
             if (cardTags.includes(tag)) {
               card.style.display = 'block';
-            } else
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
